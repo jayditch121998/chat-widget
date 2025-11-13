@@ -1,7 +1,7 @@
 // api/chat.js
 export default async function handler(req, res) {
   try {
-    const { messages } = await req.json();
+    const { messages } = await req.body();
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
