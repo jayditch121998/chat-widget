@@ -43,8 +43,8 @@ export default function ChatWidget() {
       });
       
 
+      console.log('response:' , response);
       const data = await response.json();
-      console.log(data);
       if (data.content && data.content[0]) {
         const assistantMessage = {
           role: 'assistant',
