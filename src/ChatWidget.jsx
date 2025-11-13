@@ -44,6 +44,7 @@ export default function ChatWidget() {
       
 
       console.log('response:' , response);
+      console.log('response.json():' , response.json());
       const data = await response.json();
       if (data.content && data.content[0]) {
         const assistantMessage = {
