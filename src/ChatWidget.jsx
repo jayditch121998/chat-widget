@@ -42,14 +42,11 @@ export default function ChatWidget() {
         }),
       });
       
-
-      console.log('response:' , response);
-      console.log('response.json():' , await response.json());
       const data = await response.json();
-      if (data.content && data.content[0]) {
+      if (data.choices[0].message.content) {
         const assistantMessage = {
           role: 'assistant',
-          content: data.content[0].text
+          content: data.choices[0].message.content
         };
         setMessages(prev => [...prev, assistantMessage]);
       }
